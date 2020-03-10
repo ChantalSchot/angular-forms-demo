@@ -1,0 +1,30 @@
+<div>
+    {{ model | json }}
+</div>
+
+<div class="form col-md-3">
+    <h1>Movie Form</h1>
+    <form #modelForm="ngForm" (ngSubmit)="saveMovie()">
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input [(ngModel)]="model.id" type="number" class="form-control" id="id" name="id" required />
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input [(ngModel)]="model.name" type="text" class="form-control" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input [(ngModel)]="model.description" type="text" class="form-control" id="description" name="description" required />
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input [(ngModel)]="model.genre" type="text" class="form-control" id="genre" name="genre" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
