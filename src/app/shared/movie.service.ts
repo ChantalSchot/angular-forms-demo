@@ -13,9 +13,18 @@ export class MovieService {
 
   postNewMovie(movie: Movie): Observable<HttpResponse<Movie>> {
     const url = `${this.baseUrl}/Video`;
+    const httpOptions = {
+      headers: new HttpHeaders(
+        {
+        'Content-Type': 'application/json'
+        }
+      )
+    };
 
     return this.httpClient.post<HttpResponse<Movie>>(
-      url, JSON.stringify(movie)
+        url, 
+        JSON.stringify(movie),
+        // httpOptions
       );
   };
 
