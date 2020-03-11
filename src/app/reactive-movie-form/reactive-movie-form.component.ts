@@ -28,7 +28,7 @@ export class ReactiveMovieFormComponent implements OnInit {
     console.log(this.movieForm);
     console.log(this.movieForm.value.name);
     console.log(newMovie);
-    // this.movieService.postNewMovie(postMovie.value).subscribe(result => console.log(result));
+    this.movieService.postNewMovie(newMovie).subscribe(result => console.log(result));
   }
 
 
